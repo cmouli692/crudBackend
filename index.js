@@ -3,7 +3,14 @@ const cors = require("cors")
 const sqlite3 = require("sqlite3").verbose()
 const app = express()
 
-app.use(cors()) // do from this
+const corsOptions = {
+    origin: "https://crudcmouli692.netlify.app" ,
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE" ,
+    credentials : true,
+    optionsSuccessStatus : 204 ,
+}
+
+app.use(cors(corsOptions)) // do from this
 
 app.use(express.json())
 
